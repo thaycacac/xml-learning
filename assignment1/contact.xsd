@@ -10,13 +10,23 @@
               <xs:element name="phone">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:int" name="mobile"/>
-                    <xs:element type="xs:int" name="home"/>
-                    <xs:element type="xs:int" name="office"/>
+                    <xs:element type="phoneType" name="mobile"/>
+                    <xs:element type="phoneType" name="home"/>
+                    <xs:element type="phoneType" name="office"/>
+                    <xsd:simpleType name="phoneType">
+                      <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[0-9]{3}-[0-9]{7}"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element type="xs:string" name="email"/>
+              <xs:element type="emailAddress" name="email"/>
+              <xsd:simpleType name="emailAddress"> 
+                <xsd:restriction base="xsd:string"> 
+                  <xsd:pattern value="[^@]+@[^\.]+\..+"/> 
+                </xsd:restriction> 
+              </xsd:simpleType> 
             </xs:sequence>
             <xs:attribute type="xs:byte" name="id" use="optional"/>
           </xs:complexType>
