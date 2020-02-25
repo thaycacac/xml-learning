@@ -1,0 +1,27 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="contacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contact">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:string" name="company"/>
+              <xs:element name="phone">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="mobile"/>
+                    <xs:element type="xs:int" name="home"/>
+                    <xs:element type="xs:int" name="office"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="email"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="id" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

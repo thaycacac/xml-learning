@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<contacts>
+    <contact id="1">
+        <name>Nguyen Van Hung</name>
+        <company>FSoft</company>
+        <phone>
+            <mobile>0912443843</mobile>
+            <home>0332982321</home>
+            <office>098512343</office>
+        </phone>
+        <email>hung@fsoft.com.vn</email>
+    </contact>
+    <contact id="2">
+        <name>Le Thuy Hanh</name>
+        <company>GameLot</company>
+        <phone>
+            <mobile>0982343454</mobile>
+            <home>042493843</home>
+            <office>04982312</office>
+        </phone>
+        <email>hanh@gamelot.com.vn</email>
+    </contact>
+    <contact id="3">
+        <name>Ngo Thi Hong</name>
+        <company>VietLand</company>
+        <phone>
+            <mobile>0983475433</mobile>
+            <home>0982354344</home>
+            <office>0912434343</office>
+        </phone>
+        <email>hong@vietland.com.vn</email>
+    </contact>
+    <contact id="4">
+        <name>Truong Thu Huong</name>
+        <company>Yamaha</company>
+        <phone>
+            <mobile>0904983234</mobile>
+            <home>0982354344</home>
+            <office>024788323</office>
+        </phone>
+        <email>huongtt@yamaha.com.vn</email>
+    </contact>
+    <contact id="5">
+        <name>Dao Trung Kien</name>
+        <company>Harmony</company>
+        <phone>
+            <mobile>0988353235</mobile>
+            <home>024986545</home>
+            <office>024988988</office>
+        </phone>
+        <email>kien5@harmony.com.vn</email>
+    </contact>
+</contacts>

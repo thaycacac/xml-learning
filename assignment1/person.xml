@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="person.xsl"?> 
+<person_list>
+    <person id="P001">
+        <name>Bui Viet Hoang</name>
+        <gender>Male</gender>
+        <contact>
+            <phone>0984323543</phone>
+            <email>hoangbv@gmail.com</email>
+            <address>Xuan Dinh - Tu Liem - Ha Noi</address>
+        </contact>
+    </person>
+    <person id="P002">
+        <name>Le Lan Huong</name>
+        <gender>Female</gender>
+        <contact>
+            <phone>0913783232</phone>
+            <email>huongll@gmail.com</email>
+            <address>Duc Ly - Ly Nhan - Ha Nam</address> 
+        </contact>
+    </person>
+    <person id="P003">
+        <name>Tran Khac Minh</name>
+        <gender>Male</gender>
+        <contact>
+            <phone>0387232331</phone>
+            <email>minhtk@gmail.com</email>
+            <address>Tho Loc - Hoang Hoa - Thanh Hoa</address>
+        </contact>
+    </person>
+    <person id="P004">
+        <name>Luong Thu Ha</name>
+        <gender>Female</gender>
+        <contact>
+            <phone>0912384234</phone>
+            <email>haxinh@gmail.com</email>
+            <address>Phu Dien - Nam Tu Liem - Ha Noi</address>
+        </contact>
+    </person>
+    <person id="P005">
+        <name>Hoang Lan Anh</name>
+        <gender>Female</gender>
+        <contact>
+            <phone>0912998323</phone>
+            <email>lananh@gmail.com</email>
+            <address>Tu Xa - Lam Thao - Phu Tho</address>            
+        </contact>
+    </person>
+    <person id="P006">
+        <name>Pham Ngoc Hoa</name>
+        <gender>Male</gender>
+        <contact>
+            <phone>0958038714</phone>
+            <email>thaycacac@gmail.com</email>
+            <address>Khanh Cong - Yen Khanh - Ninh Binh</address>
+        </contact>
+    </person>
+    <person id="P007">
+        <name>Do Quang Hiep</name>
+        <gender>Female</gender>
+        <contact>
+            <phone>0984481347</phone>
+            <email>hiepdq@gmail.com</email>
+            <address>Cu Lo - Nhat Tan - Hung Yen</address>
+        </contact>
+    </person>
+</person_list>
