@@ -1,5 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using SharpShop.Entities;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SharpShop.Controllers
 {
@@ -11,6 +18,32 @@ namespace SharpShop.Controllers
         public CustomeraController(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+
+        //GET api/user/orders/{id}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                IEnumerable<OrderDetailDTO> orders = Enumerable.Empty<OrderDetailDTO>();
+
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var query = @"SELECT [name], image, price, [description], category, quantity 
+                                FROM OrderDetail 
+                                INNER JOIN Product 
+                                ON OrderDetail.productId = Product.id
+                                WHERE orderId = @id";
+                    orders = await connection.QueryAsync<OrderDetailDTO>(query, new { id });
+                }
+                return Ok(orders);
+            }
+            catch (Exception e)
+            {
+                return Ok(e.Message);
+            }
         }
         /*
         //GET api/task

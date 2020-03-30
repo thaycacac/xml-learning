@@ -1,12 +1,10 @@
 namespace SharpShop.Entities
 {
-    public class Product
+    public class OrderDetailDTO
     {
-        public int id { get; set; }
-
         public string name { get; set; }
 
-        public int quantityInStock { get; set; }
+        public string image { get; set; }
 
         public double price { get; set; }
 
@@ -14,6 +12,6 @@ namespace SharpShop.Entities
 
         public string category { get; set; }
 
-        public string image { get; set; }
+        public int quantity { get; set; }
     }
 }
