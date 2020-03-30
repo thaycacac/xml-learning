@@ -15,5 +15,7 @@ namespace SharpShop.Entities
         public string category { get; set; }
 
         public string image { get; set; }
+
+        public bool sale { get; set; }
     }
 }
