@@ -8,7 +8,7 @@ namespace SharpShop.Entities
 
         public int quantityInStock { get; set; }
 
-        public double price { get; set; }
+        public int price { get; set; }
 
         public string description { get; set; }
 
