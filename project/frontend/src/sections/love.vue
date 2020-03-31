@@ -1,7 +1,7 @@
 <template>
   <section class="furniture">
     <h1>Thể loại: Ngôn Tình</h1>
-    <ProductList category="love"/>
+    <ProductList category="Ngôn Tình"/>
   </section>
 </template>
 

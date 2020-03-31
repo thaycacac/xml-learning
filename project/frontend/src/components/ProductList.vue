@@ -8,7 +8,7 @@
           class="product-card"
           :class="[ !productInStock(product) ? 'out-of-stock' : '' ]"
           tabindex="0"
-          v-show="'Ngôn Tình' === product.category._text  || category  === 'all'"
+          v-show="category === product.category._text  || category  === 'all'"
         >
           <span class="sale-banner" v-if="product.sale._text === 'true'">Sale</span>
           <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
