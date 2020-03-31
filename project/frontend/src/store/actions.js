@@ -14,7 +14,7 @@ export default {
 
   addProductToCart(context, product) {
     if(context.getters.productInStock(product)){
-      const cartItem  = context.state.cart.find(item => item.id._text === product.id._text)
+      const cartItem  = context.state.cart.find(item => item.id === product.id._text)
       if(!cartItem) {
         context.commit('pushProductToCart',product.id._text)
       }

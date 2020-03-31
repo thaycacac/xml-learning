@@ -4,12 +4,14 @@
     <div class="content-wrapper">
       <router-view/>
       <button @click="test">Test</button>
+      <modal />
     </div>
     <Footer/>
   </div>
 </template>
 
 <script>
+import Modal from '@/components/Modal'
 import TopNavigation from '@/components/TopNavigation'
 import Footer from '@/components/Footer'
 import { getProducts } from '@/api'
@@ -19,7 +21,8 @@ export default {
   name: 'App',
   components: {
     Footer,
-    TopNavigation
+    TopNavigation,
+    Modal
   },
   methods: {
     async test() {

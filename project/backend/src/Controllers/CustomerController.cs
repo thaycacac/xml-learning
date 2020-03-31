@@ -26,12 +26,12 @@ namespace SharpShop.Controllers
         {
             try
             {
-                UserDTO user;
+                Customer user;
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     await connection.OpenAsync();
                     var query = @"SELECT TOP 1 * FROM Customer WHERE username = @username AND password = @password";
-                    user = await connection.QuerySingleAsync<UserDTO>(query, new { model.username, model.password });
+                    user = await connection.QuerySingleAsync<Customer>(query, new { model.username, model.password });
                 }
                 return Ok(user);
             }
