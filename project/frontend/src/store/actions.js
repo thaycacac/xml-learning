@@ -1,6 +1,6 @@
 import shop from '@/api/shop'
 
-export default { // actions = mehtods
+export default {
   fetchProducts(context) {
     return new Promise(function(resolve, reject) {
       shop.getProducts(products => {

@@ -1,6 +1,6 @@
 <template>
   <section class="furniture">
-    <h1>Love</h1>
+    <h1>Thể loại: Ngôn Tình</h1>
     <ProductList category="love"/>
   </section>
 </template>

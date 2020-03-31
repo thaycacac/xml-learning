@@ -1,6 +1,6 @@
 <template>
   <section class="decoration">
-    <h1>Novel</h1>
+    <h1>Thể loại: Tiểu Thuyết</h1>
     <ProductList category="novel"/>
   </section>
 </template>

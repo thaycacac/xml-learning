@@ -10,7 +10,7 @@
           tabindex="0"
           v-show="'Ngôn Tình' === product.category._text  || category  === 'all'"
         >
-          <span class="sale-banner" v-if="product.sale._text">Sale</span>
+          <span class="sale-banner" v-if="product.sale._text === 'true'">Sale</span>
           <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
           <img :src="`${product.image._text }`" :alt="`image of ${product.name._text }`">
           <span class="product-title">{{product.name._text }}</span>
@@ -28,7 +28,6 @@ export default {
   name: 'ProductList',
   data() {
     return {
-      // products: []
       loading: false,
       highprice: 100
     };
@@ -42,11 +41,11 @@ export default {
   computed : {
     products() {
       return this.$store.state.products
-      // .filter(el =>
-      //   this.$store.state.sale
-      //     ? el.price < this.$store.state.highprice && el.sale
-      //     : el.price < this.$store.state.highprice
-      // )
+      .filter(el =>
+        this.$store.state.sale
+          ? parseInt(el.price._text) <= this.$store.state.highprice && el.sale._text === 'true'
+          : parseInt(el.price._text) <= this.$store.state.highprice
+      )
     },
     ...mapGetters({
       productInStock: 'productInStock'
@@ -54,7 +53,6 @@ export default {
   },
   created() {
     this.loading = true
-    // this.$store.dispatch('fetchProducts')
     this.fetchProducts()
       .then(() => this.loading = false)
   },
@@ -64,7 +62,6 @@ export default {
       addProductToCart: 'addProductToCart'
 
     }),
-
     // addProductToCart(product) {
     //   this.$store.dispatch('addProductToCart',product)
     // }
@@ -134,9 +131,9 @@ export default {
  .product-card.out-of-stock {
    pointer-events: none;
  }
- /* .product-card.out-of-stock button {
+ .product-card.out-of-stock button {
    display: none;
- } */
+ }
 
  .product-card.out-of-stock img {
    opacity: 0.6;

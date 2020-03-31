@@ -1,7 +1,7 @@
 <template>
   <aside>
     <div class="aside-block">
-      <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
+      <label for="pricerange">Lọc theo giá: <span>{{ pricerange | currency}}</span></label>
       <input
         class="slider"
         id="pricerange"
@@ -10,24 +10,24 @@
         type="range"
         :min="min"
         :max="max"
-        step="0.1"
+        step="1000"
         @input="updateHighPrice($event)"
       />
-      <span class="min">${{ min }}</span>
-      <span class="max">${{ max }}</span>
+      <span class="min">{{ min | currency }}</span>
+      <span class="max">{{ max | currency}}</span>
     </div>
     <div class="aside-block">
-        <h4>Super Sale</h4>
+        <h4>Sản phẩm đang Sale</h4>
         <label class="checkbox-control">
-          <span class="label-name">Show only sale item</span>
+          <span class="label-name">Check sale</span>
           <input type="checkbox" v-model="check" @change="updateSale">
           <div class="checkbox-box"></div>
         </label>
     </div>
-    <!-- <div class="aside-block">
-      <h4>Support</h4>
-      <p>Get in touch with us for any queries at <a href="#">support@bazaaar.in</a></p>
-    </div> -->
+    <div class="aside-block">
+      <h4>Thaycacac</h4>
+      <p>A fresh approach to shopping.</p>
+    </div>
   </aside>
 </template>
 
@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       min: 0,
-      max: 2000,
+      max: 400000,
       check: this.checked
     };
   },

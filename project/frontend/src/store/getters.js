@@ -1,7 +1,7 @@
 import shop from '@/api/shop'
 
-export default { // = computed properties
-  availableProducts(state,getters) {
+export default {
+  availableProducts(state, getters) {
     return state.products.filter(product => product.quantityInStock._text > 0)
   },
   cartProducts(state) {

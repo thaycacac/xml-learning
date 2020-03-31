@@ -48,7 +48,6 @@ export default {
       checkout: 'checkout'
     })
   }
-
   // computed: {
   //   products() {
   //     return this.$store.getters.cartProducts
