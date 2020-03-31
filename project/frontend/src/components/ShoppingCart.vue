@@ -9,19 +9,16 @@
     <div v-else class="shopping-cart-items">
       <ul>
         <li v-for="product in products" class="cart-product-card" :key="product.id">
-          <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
-          <span class="product-title">{{product.title}}</span>
+          <img :src="product.image" :alt="`Image of ${product.name}`">
+          <span class="product-title">{{product.name}}</span>
           <span class="product-price"> {{product.price | currency}}</span>
           <span class="product-cart-quantity">Quantity: {{product.quantity}}</span>
         </li>
       </ul>
       <div class="cart-checkout">
-        <h3>Cart total : </h3>
+        <h3>Tổng tiền: </h3>
         <p>{{ total | currency}}</p>
-        <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button>
-        <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
-        <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
-        <button @click="checkout">Checkout</button>
+        <button @click="checkout">Thanh toán</button>
         <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p>
       </div>
     </div>

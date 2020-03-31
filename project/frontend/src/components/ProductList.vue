@@ -15,7 +15,7 @@
           <img :src="`${product.image._text }`" :alt="`image of ${product.name._text }`">
           <span class="product-title">{{product.name._text }}</span>
           <span class="product-price"> {{product.price._text  | currency}}</span>
-          <button @click="addProductToCart(product)" class="add-to-cart-btn">Add to cart</button>
+          <button @click="addProductToCart(product)" class="add-to-cart-btn">Thêm vào giỏ hàng</button>
         </li>
       </transition-group>
   </div>

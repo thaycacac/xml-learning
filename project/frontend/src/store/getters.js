@@ -6,11 +6,12 @@ export default {
   },
   cartProducts(state) {
     return state.cart.map(cartItem => {
-      const product = state.products.find(product => product.id === cartItem.id)
+      const product = state.products.find(product => product.id._text === cartItem.id)
       return {
-        title: product.title,
-        price: product.price,
-        img: product.img,
+        id: product.id._text,
+        title: product.name._text,
+        price: product.price._text,
+        image: product.image._text,
         quantity: cartItem.quantity
       }
     })
@@ -21,7 +22,7 @@ export default {
 
   productInStock() {
     return(product) => {
-      return product.quantityInStock._text > 0
+      return parseInt(product.quantityInStock._text) > 0
     }
   }
 }
