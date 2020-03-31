@@ -60,7 +60,6 @@ export default {
     ...mapActions({
       fetchProducts: 'fetchProducts',
       addProductToCart: 'addProductToCart'
-
     }),
     // addProductToCart(product) {
     //   this.$store.dispatch('addProductToCart',product)

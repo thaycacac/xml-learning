@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       min: 0,
-      max: 400000,
+      max: 150000,
       check: this.checked
     };
   },

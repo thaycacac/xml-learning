@@ -5,7 +5,6 @@ const service = axios.create({
   timeout: 5000
 })
 
-// request interceptor
 service.interceptors.request.use(
   config => {
     config.headers['Content-Type'] = 'text/xml'

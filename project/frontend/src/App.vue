@@ -12,7 +12,7 @@
 <script>
 import TopNavigation from '@/components/TopNavigation'
 import Footer from '@/components/Footer'
-import { getListProduct } from '@/api'
+import { getProducts } from '@/api'
 import parser from 'xml-js'
 
 export default {
@@ -23,9 +23,8 @@ export default {
   },
   methods: {
     async test() {
-      const { data } = await getListProduct();
-      console.log(JSON.parse(parser.xml2json(data, { compact: true, ignoreCdata: true })));
-      console.log(data)
+      const { data } = await getProducts();
+      console.log(JSON.parse(parser.xml2json(data, { compact: true, ignoreCdata: true })).ArrayOfProduct.Product);
     }
   }
 }
