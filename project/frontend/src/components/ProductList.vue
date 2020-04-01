@@ -9,10 +9,13 @@
           :class="[ !productInStock(product) ? 'out-of-stock' : '' ]"
           tabindex="0"
           v-show="category === product.category._text  || category  === 'all'"
+          :to="`products/${product.id._text}`"
         >
           <span class="sale-banner" v-if="product.sale._text === 'true'">Sale</span>
           <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
-          <img :src="`${product.image._text }`" :alt="`image of ${product.name._text }`">
+          <router-link :to="`products/${product.id._text}`">
+            <img :src="`${product.image._text }`" :alt="`image of ${product.name._text }`">
+          </router-link>
           <span class="product-title">{{product.name._text }}</span>
           <span class="product-price"> {{product.price._text  | currency}}</span>
           <button @click="addProductToCart(product)" class="add-to-cart-btn">Thêm vào giỏ hàng</button>
@@ -125,6 +128,7 @@ export default {
  }
  .product-price {
    font-weight: bold;
+   color: #B83280;
  }
 
  .product-card.out-of-stock {

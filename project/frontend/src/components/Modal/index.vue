@@ -18,6 +18,7 @@
 <script>
 import modal from './modal'
 import { login } from '@/api'
+import axios from 'axios'
 
 export default {
   data() {
@@ -33,9 +34,15 @@ export default {
   methods: {
     async login() {
       const dataFormat = `<UserDTO><username>${this.username}</username><password>${this.password}</password></UserDTO>`
+      const hello = new DOMParser().parseFromString(dataFormat,"text/xml")
       const data = await login({ username: this.username, password: this.password })
-      console.log(data)
-    }
+      var config = {
+ headers: {'Content-Type': 'text/xml'}
+};
+ axios.post('https://localhost:7985/api/user', hello, config).then(res => {
+   console.log(res);
+}).catch(err => console.log(err));
+}
   }
 }
 </script>

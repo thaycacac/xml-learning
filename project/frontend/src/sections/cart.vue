@@ -1,10 +1,10 @@
 <template>
   <transition name="fade" tag="div">
-  <div class="shopping-cart-wrap">
-    <h1>Giỏ hàng của bạn</h1>
-    <ShoppingCart/>
-  </div>
-</transition>
+    <div class="shopping-cart-wrap">
+      <h1>Giỏ hàng của bạn</h1>
+      <ShoppingCart/>
+    </div>
+  </transition>
 </template>
 
 <script>
