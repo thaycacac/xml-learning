@@ -1,5 +1,3 @@
-import shop from '@/api/shop'
-
 export default {
   availableProducts(state, getters) {
     return state.products.filter(product => product.quantityInStock._text > 0)
@@ -24,5 +22,8 @@ export default {
     return(product) => {
       return parseInt(product.quantityInStock._text) > 0
     }
+  },
+  user(state) {
+    return state.user
   }
 }

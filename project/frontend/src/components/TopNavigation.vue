@@ -6,8 +6,8 @@
       <router-link to="/ngon-tinh">Ngôn tình</router-link>
       <router-link to="/tieu-thuyet">Tiểu thuyết</router-link>
       <div class="wrap-top-right">
-        <login />
-        <router-link to="/profile">
+        <login v-show="false"/>
+        <router-link to="/me">
           <button class="button-nav">
               Profile
           </button>

@@ -5,6 +5,7 @@ import cart from '@/sections/cart'
 import love from '@/sections/love'
 import novel from '@/sections/novel'
 import product from '@/sections/product'
+import me from '@/sections/me'
 import SideMainLayout from '@/layout/SideMainLayout'
 
 Vue.use(Router)
@@ -37,6 +38,11 @@ export default new Router({
       path: '/products/:id',
       name: 'product',
       component: product
+    },
+    {
+      path: '/me',
+      name: 'me',
+      component: me
     },
     {
       path: '/cart',

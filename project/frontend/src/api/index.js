@@ -14,6 +14,14 @@ export function getProduct(id) {
   })
 }
 
+export function getOrders(id) {
+  return request({
+    url: `/user/orders/${id}`,
+    method: 'get'
+  })
+}
+
+
 export function login({ username, password }) {
   const dataFormat = `<UserDTO><username>${username}</username><password>${password}</password></UserDTO>`
   return request({

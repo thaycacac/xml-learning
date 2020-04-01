@@ -529,3 +529,53 @@ input[type='range'].slider:focus::-ms-fill-upper {
 .button-nav {
   margin: -5px 10px 0 0;
 }
+
+.wrap-history {
+  background-color: rgba(0, 0, 0, 0.005);
+  padding: 2rem;
+  font-size: 18px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 7px;
+}
+
+.status {
+  font-size: 13px;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.cancel {
+  background-color: #d90000;
+}
+
+.done {
+  background-color: green;
+}
+
+.ship {
+  background-color: #c88b03;
+}
+
+.comment {
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.col-comment {
+  width: 200px;
+}
