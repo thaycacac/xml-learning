@@ -28,7 +28,7 @@
 <script>
 import index from '@/store/index'
 import logo from '@/assets/logo'
-import Login from '@/components/Modal'
+import Login from '@/components/login'
 
 export default {
   name:'TopNavigation',
