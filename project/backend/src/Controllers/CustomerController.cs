@@ -54,7 +54,7 @@ namespace SharpShop.Controllers
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     await connection.OpenAsync();
-                    var query = @"SELECT * FROM [Order] WHERE customerId = @id";
+                    var query = @"SELECT * FROM [Order] WHERE customerId = @id ORDER BY id DESC";
                     orders = await connection.QueryAsync<Order>(query, new { id });
                 }
                 return Ok(orders);

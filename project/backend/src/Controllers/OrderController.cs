@@ -20,7 +20,7 @@ namespace SharpShop.Controllers
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
-        //GET api/user/orders/{id}
+        //GET api/orders/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -31,7 +31,7 @@ namespace SharpShop.Controllers
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     await connection.OpenAsync();
-                    var query = @"SELECT [name], image, price, [description], category, quantity 
+                    var query = @"SELECT [name], image, price, quantity 
                                 FROM OrderDetail 
                                 INNER JOIN Product 
                                 ON OrderDetail.productId = Product.id
