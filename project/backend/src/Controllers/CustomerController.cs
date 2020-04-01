@@ -26,6 +26,7 @@ namespace SharpShop.Controllers
         {
             try
             {
+                Console.WriteLine("run");
                 Customer user;
                 using (var connection = new SqlConnection(_connectionString))
                 {

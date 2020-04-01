@@ -13,8 +13,6 @@ namespace SharpShop
             Configuration = configuration;
         }
 
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
@@ -26,14 +24,11 @@ namespace SharpShop
                     options.InputFormatters.Add(new XmlSerializerInputFormatter());
                 }
             );
-            services.AddCors(options =>
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
             {
-                options.AddPolicy(MyAllowSpecificOrigins,
-                builder =>
-                {
-                    builder.WithOrigins("http://localhost:8080");
-                });
-            });
+                builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+            }));
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +38,9 @@ namespace SharpShop
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors(
+                options => options.WithOrigins("http://localhost:8080").AllowAnyMethod()
+            );
             app.UseMvc();
         }
     }
