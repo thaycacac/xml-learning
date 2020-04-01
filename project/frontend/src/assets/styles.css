@@ -521,3 +521,11 @@ input[type='range'].slider:focus::-ms-fill-upper {
 .detail-product {
   color: rgba(0, 0, 0, 0.6);
 }
+
+.wrap-top-right {
+  float: right;
+}
+
+.button-nav {
+  margin: -5px 10px 0 0;
+}

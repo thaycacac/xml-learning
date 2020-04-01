@@ -5,9 +5,14 @@
       </router-link>
       <router-link to="/ngon-tinh">Ngôn tình</router-link>
       <router-link to="/tieu-thuyet">Tiểu thuyết</router-link>
-      <div class="nav-link">
-        <router-link to="/cart" exact>
-        <div class="cart-link">
+      <div class="wrap-top-right">
+        <login />
+        <router-link to="/profile">
+          <button class="button-nav">
+              Profile
+          </button>
+        </router-link>
+        <router-link to="/cart" exact class="cart-link">
           <div v-if="noItems > 0" class="cart-link__count">{{ noItems }}</div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
             <title id="cart">
@@ -15,7 +20,6 @@
             </title>
             <path fill="black" d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"/>
           </svg>
-        </div>
         </router-link>
       </div>
     </nav>
@@ -24,11 +28,13 @@
 <script>
 import index from '@/store/index'
 import logo from '@/assets/logo'
+import Login from '@/components/Modal'
 
 export default {
   name:'TopNavigation',
   components: {
-    logo
+    logo,
+    Login
   },
   computed: {
     noItems() {
