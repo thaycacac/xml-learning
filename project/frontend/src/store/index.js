@@ -15,11 +15,11 @@ export default new Vuex.Store({
     highprice: 100000,
     sale: false,
     user: {
-      id: '1',
+      id: 2,
       fullname: 'Phạm Ngọc Hòa',
       phone: '0968038714',
       address: '35 Lương Ngọc Quyến, Hàng Buồm, Hoàn Kiếm, Hà Nội',
-      email: 'hoa@gmail.com'
+      email: 'thaycacac@gmail.com'
     }
   },
   getters,

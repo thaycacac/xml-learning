@@ -28,12 +28,28 @@ export function getProductsInOrder(id) {
   })
 }
 
-
-
 export function login({ username, password }) {
   const dataFormat = `<UserDTO><username>${username}</username><password>${password}</password></UserDTO>`
   return request({
     url: '/user',
+    data: dataFormat,
+    method: 'post'
+  })
+}
+
+export function createOrder({ customerId, orderDate, comment }) {
+  const dataFormat = `<Order><customerId>${customerId}</customerId><orderDate>${orderDate}</orderDate><comment>${comment}</comment></Order>`
+  return request({
+    url: '/order',
+    data: dataFormat,
+    method: 'post'
+  })
+}
+
+export function createOrderDetail({ orderID, productID, quantity }) {
+  const dataFormat = `<OrderCreateDTO><orderID>${orderID}</orderID><productID>${productID}</productID><quantity>${quantity}</quantity></OrderCreateDTO>`
+  return request({
+    url: '/order/detail',
     data: dataFormat,
     method: 'post'
   })

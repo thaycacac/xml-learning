@@ -1,4 +1,3 @@
-import shop from '@/api/shop'
 import { getProducts } from '@/api'
 import parser from 'xml-js'
 
@@ -25,18 +24,5 @@ export default {
       context.commit('decrementProductInventory',product)
 
     }
-  },
-
-  checkout(context) {
-    shop.buyProducts(
-      context.state.cart,
-      () => {
-        context.commit('emptyCart')
-        context.commit('setCheckoutStatus','success')
-      },
-      () => {
-        context.commit('setCheckoutStatus','fail')
-      }
-    )
   }
 }

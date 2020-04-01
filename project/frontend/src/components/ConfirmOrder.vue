@@ -1,46 +1,78 @@
 <template>
-  <button class="button-nav" id="show-modal" @click="showModal = true">Login
+  <button class="button-nav" id="show-modal" @click="showModal = true">Thanh toán
     <modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">Xác nhận thông tin</h3>
       <div slot="body">
-        <input v-model="username" type="text" class="input" placeholder="username">
-        <input v-model="password" type="password" placeholder="password">
+        <input v-model="userInfo.fullname" type="text" class="input" placeholder="fullname" disabled>
+        <input v-model="userInfo.phone" type="text" class="input" placeholder="phone" disabled>
+        <input v-model="userInfo.email" type="text" class="input" placeholder="email" disabled>
+        <textarea name="" id="" cols="57" rows="5" v-model="userInfo.address" />
+        <textarea name="" id="" cols="57" rows="5" v-model="userInfo.comment" />
       </div>
-      <button slot="footer" @click="login">
-        Login
+      <button slot="footer" @click="confirmOrder">
+        Hoàn tất thanh toán
       </button>
-      <h3 slot="header">LOGIN</h3>
     </modal>
   </button>
 </template>
 
 <script>
 import modal from './modal'
-import { login } from '@/api'
+import { createOrder, createOrderDetail } from '@/api'
 import axios from 'axios'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   data() {
     return {
       showModal: false,
-      username: 'thaycacac',
-      password: '123456'
+      userInfo: null
     }
   },
   components: {
     modal
   },
+  computed: {
+    ...mapGetters([
+      'user',
+      'cartProducts'
+    ])
+  },
+  mounted() {
+    this.userInfo = { ...this.user, comment: '' }
+  },
   methods: {
-    async login() {
-      const dataFormat = `<UserDTO><username>${this.username}</username><password>${this.password}</password></UserDTO>`
-      const hello = new DOMParser().parseFromString(dataFormat,"text/xml")
-      const data = await login({ username: this.username, password: this.password })
-      var config = {
- headers: {'Content-Type': 'text/xml'}
-};
- axios.post('https://localhost:7985/api/user', hello, config).then(res => {
-   console.log(res);
-}).catch(err => console.log(err));
-}
+    ...mapMutations([
+      'emptyCart'
+    ]),
+    formatDate() {
+      var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear()
+        if (month.length < 2) 
+            month = '0' + month
+        if (day.length < 2) 
+            day = '0' + day
+        return [year, month, day].join('-')
+    },
+    async confirmOrder() {
+      const { data } = await createOrder({
+        customerId: this.userInfo.id,
+        orderDate: this.formatDate(),
+        comment: this.userInfo.comment
+      })
+      const orderId = parseInt(data.replace('<int>', '').replace('</int>', ''));
+      await this.cartProducts.forEach(async e => {
+        await createOrderDetail({
+          orderID: orderId,
+          productID: e.id,
+          quantity: e.quantity
+        })
+      })
+      this.emptyCart()
+      this.$router.push('/')
+    }
   }
 }
 </script>

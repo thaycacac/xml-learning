@@ -48,7 +48,7 @@ namespace SharpShop.Controllers
 
 
         // POST api/order
-        [HttpPost("{id}")]
+        [HttpPost()]
         public async Task<IActionResult> Post([FromBody] Order model)
         {
             try
@@ -58,7 +58,7 @@ namespace SharpShop.Controllers
             {
                 await connection.OpenAsync();
                 var query = @"INSERT INTO [Order] (customerId, status, orderDate, comment)
-                    VALUES (@customerId, 'Shipping', @orderDate, @comment); SELECT SCOPE_IDENTITY()";
+                    VALUES (@customerId, 'shipping', @orderDate, @comment); SELECT SCOPE_IDENTITY()";
                     idOrder = await connection.QuerySingleAsync<int>(query, new { model.customerId, model.orderDate, model.comment });
             }
             return Ok(idOrder);
@@ -70,7 +70,7 @@ namespace SharpShop.Controllers
         }
 
         // POST api/order/detail
-        [HttpPost()]
+        [HttpPost("detail")]
         public async Task<IActionResult> CreateOrderDetail([FromBody] OrderCreateDTO model)
         {
             try

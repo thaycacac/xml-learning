@@ -1,10 +1,7 @@
-import shop from '@/api/shop'
-
 export default { // setting and updating the state
   setProducts(state,products) {
     state.products = products
   },
-
   pushProductToCart(state,productId) {
     state.cart.push({
       id: productId,
@@ -16,6 +13,9 @@ export default { // setting and updating the state
     cartItem.quantity++
     state.cartItems++
   },
+  // removeProductInCart(state, productId) {
+  //   state.cart 
+  // },
   decrementProductInventory(state,product) {
     product.inventory--
   },

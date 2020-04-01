@@ -53,6 +53,20 @@ input[type=password] {
   text-align: center;
 }
 
+textarea {
+  border: #e1e1e1 1px solid;
+  box-shadow: 1px 0rem 14px 0px #eee;
+  background: white;
+  border-radius: 20px;
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+textarea:focus {
+  outline: none;
+  border: #B83280 1px solid;
+}
+
 input[type=text]:focus,
 input[type=password]:focus {
   outline: none;
@@ -296,7 +310,7 @@ input[type='range'].slider::-webkit-slider-runnable-track {
 input[type='range'].slider::-webkit-slider-thumb {
   -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
           box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
-  border: 1.9px solid #3e63ea;
+  border: 1.9px solid #B83280;
   height: 17px;
   width: 17px;
   border-radius: 31px;
@@ -307,7 +321,7 @@ input[type='range'].slider::-webkit-slider-thumb {
 }
 
 input[type='range'].slider:focus::-webkit-slider-runnable-track {
-  background: #5576ed;
+  background: #B83280;
 }
 
 input[type='range'].slider::-moz-range-track {
@@ -322,7 +336,7 @@ input[type='range'].slider::-moz-range-track {
 
 input[type='range'].slider::-moz-range-thumb {
   box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
-  border: 1.9px solid #3e63ea;
+  border: 1.9px solid #B83280;
   height: 17px;
   width: 17px;
   border-radius: 31px;
@@ -340,7 +354,7 @@ input[type='range'].slider::-ms-track {
 }
 
 input[type='range'].slider::-ms-fill-lower {
-  background: #2752e7;
+  background: #B83280;
   border: 0px solid rgba(1, 1, 1, 0);
   border-radius: 27.4px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);

@@ -18,7 +18,7 @@
       <div class="cart-checkout">
         <h3>Tổng tiền: </h3>
         <p>{{ total | currency}}</p>
-        <button @click="checkout">Thanh toán</button>
+        <confirm-order />
         <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p>
       </div>
     </div>
@@ -27,10 +27,13 @@
 
 <script>
 import {mapState, mapGetters, mapActions} from 'vuex'
+import ConfirmOrder from '@/components/ConfirmOrder'
 
 export default {
   name: 'ShoppingCart',
-
+  components: {
+    ConfirmOrder
+  },
   computed: {
     ...mapGetters({
       products:'cartProducts',
