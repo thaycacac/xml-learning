@@ -63,7 +63,7 @@ nav a:hover {
 }
 
 nav a.router-link-active {
-  color: #5044ff;
+  color: #B83280;
 }
 
 .logo {
@@ -103,7 +103,7 @@ nav a.router-link-active {
   border-radius: 100%;
   top: -8px;
   right: -5px;
-  background: #5044ff;
+  background: #B83280;
   color: #fff;
   font-size: 14px;
   font-weight: bold;

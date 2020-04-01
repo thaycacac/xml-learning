@@ -1,8 +1,11 @@
 <template>
   <transition name="fade" tag="div">
     <div class="shopping-cart-wrap">
-      <h1>Chi tiết sản phẩm</h1>
-      <p v-if="product.length === 0">Loading...</p>
+      <h1>
+        <router-link to="/" class="goto-back">Trang chủ</router-link> > 
+        <span class="detail-product">Chi tiết sản phẩm</span>
+      </h1>
+      <p v-if="product === null">Loading...</p>
       <div v-else class="flex">
         <div class="image-product">
           <img :src="product.image._text" alt="image product" class="image-product">
@@ -37,7 +40,7 @@ import { mapActions } from 'vuex'
 export default {
   data() {
     return {
-      product: {}
+      product: null,
     }
   },
   async mounted() {
@@ -48,7 +51,7 @@ export default {
   methods : {
     ...mapActions({
       addProductToCart: 'addProductToCart'
-    }),
+    })
   }
 }
 </script>

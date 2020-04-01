@@ -99,7 +99,7 @@ export default {
   }
 
   input[type="checkbox"]:hover ~ .checkbox-box, input[type="checkbox"]:focus ~ .checkbox-box, input[type="checkbox"]:checked ~ .checkbox-box{
-    border-color: #5044ff;
+    border-color: #B83280;
   }
 
   input[type="checkbox"]:checked ~ .checkbox-box::before {
@@ -109,7 +109,7 @@ export default {
     height: 10px;
     top: 2px;
     left: 2px;
-    background: #5044ff;
+    background: #B83280;
   }
 
 </style>

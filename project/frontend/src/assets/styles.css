@@ -512,3 +512,12 @@ input[type='range'].slider:focus::-ms-fill-upper {
 .description {
   text-align: left;
 }
+
+.goto-back {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.detail-product {
+  color: rgba(0, 0, 0, 0.6);
+}
