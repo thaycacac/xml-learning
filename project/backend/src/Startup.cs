@@ -24,10 +24,20 @@ namespace SharpShop
                     options.InputFormatters.Add(new XmlSerializerInputFormatter());
                 }
             );
-            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            services.AddCors(options =>
             {
-                builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
-            }));
+                options.AddPolicy("app-cors-policy",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials()
+                        ;
+                    });
+
+            });
             services.AddMvc();
         }
 
@@ -38,10 +48,9 @@ namespace SharpShop
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(
-                options => options.WithOrigins("http://localhost:8080").AllowAnyMethod()
-            );
-            app.UseMvc();
+            app
+                .UseCors("app-cors-policy") //Must precede UseMvc
+                .UseMvc();
         }
     }
 }
