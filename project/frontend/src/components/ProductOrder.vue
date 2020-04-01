@@ -1,25 +1,20 @@
 <template>
   <div class="shopping-cart">
-    <div v-if="$store.state.cart.length <= 0" class="empty-cart">
-      <p>Your cart is currently empty.</p>
-      <router-link to="/">
-        <button>Shop Now!</button>
-      </router-link>
+    <div v-if="products === null" class="empty-cart">
+      <p>Loading...</p>
     </div>
     <div v-else class="shopping-cart-items">
       <ul>
         <li v-for="product in products" class="cart-product-card" :key="product.id">
-          <img :src="product.image" :alt="`Image of ${product.name}`">
-          <span class="product-title">{{product.name}}</span>
-          <span class="product-price"> {{product.price | currency}}</span>
-          <span class="product-cart-quantity">Quantity: {{product.quantity}}</span>
+          <img :src="product.image._text" :alt="`Image of ${product.name._text}`">
+          <span class="product-title">{{product.name._text}}</span>
+          <span class="product-price"> {{product.price._text | currency}}</span>
+          <span class="product-cart-quantity">Quantity: {{product.quantity._text}}</span>
         </li>
       </ul>
       <div class="cart-checkout">
         <h3>Tổng tiền: </h3>
-        <p>{{ total | currency}}</p>
-        <button @click="checkout">Thanh toán</button>
-        <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p>
+        <p class="total-price">{{ total | currency}}</p>
       </div>
     </div>
   </div>
@@ -27,23 +22,24 @@
 
 <script>
 import {mapState, mapGetters, mapActions} from 'vuex'
+import { getProductsInOrder } from '@/api'
+import parser from 'xml-js'
 
 export default {
-  name: 'ShoppingCart',
-
-  computed: {
-    ...mapGetters({
-      products:'cartProducts',
-      total:'cartTotal'
-    }),
-    ...mapState({
-      checkoutStatus: 'checkoutStatus'
-    })
+  data() {
+    return {
+      products: null,
+      total: 0
+    }
   },
-  methods: {
-    ...mapActions({
-      checkout: 'checkout'
-    })
+  async mounted() {
+    const { data } = await getProductsInOrder(this.$route.params.id);
+    const dataFormat = JSON.parse(parser.xml2json(data, { compact: true, ignoreCdata: true })).ArrayOfOrderDetailDTO.OrderDetailDTO
+    console.log(dataFormat);
+    this.products = dataFormat
+    this.total =  dataFormat.reduce((exp, curr) => {
+      return exp + parseInt(curr.quantity._text) * parseInt(curr.price._text)
+    }, 0)
   }
 }
 </script>
@@ -77,6 +73,11 @@ ul {
 .cart-checkout {
   flex: 1;
   justify-content: center;
+}
+
+.total-price {
+  font-size: 40px !important;
+  color: #B83280;
 }
 
 .cart-checkout p {

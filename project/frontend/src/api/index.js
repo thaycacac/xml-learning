@@ -21,6 +21,14 @@ export function getOrders(id) {
   })
 }
 
+export function getProductsInOrder(id) {
+  return request({
+    url: `/order/${id}`,
+    method: 'get'
+  })
+}
+
+
 
 export function login({ username, password }) {
   const dataFormat = `<UserDTO><username>${username}</username><password>${password}</password></UserDTO>`

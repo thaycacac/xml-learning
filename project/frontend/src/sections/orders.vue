@@ -3,7 +3,7 @@
     <div class="shopping-cart-wrap">
       <h1>
         <router-link to="/" class="goto-back">Trang chủ</router-link> > 
-        <span class="detail-product">Trang cá nhân</span>
+        <span class="detail-product">Lịch sử mua hàng</span>
       </h1>
       <p v-if="orders === null">Loading...</p>
       <div v-else class="wrap-history flex" v-for="order in orders" :key="order.id._text">
@@ -11,7 +11,7 @@
           <span class="label">
             Order ID
           </span>
-           <router-link to="/orders/1">#{{ order.id._text }}</router-link>
+           <router-link :to="`/orders/${order.id._text}`">#{{ order.id._text }}</router-link>
         </div>
         <div class="col">
           <span class="label">
@@ -50,29 +50,19 @@
 
 <script>
 import { getOrders } from '@/api'
-import parser from 'xml-js'
 import { mapGetters } from 'vuex'
+import parser from 'xml-js'
 
 export default {
   data() {
     return {
-      user: null,
       orders: null
     }
   },
   async mounted() {
     const { data } = await getOrders(2);
     const dataFormat = JSON.parse(parser.xml2json(data, { compact: true, ignoreCdata: true })).ArrayOfOrder.Order
-    console.log(dataFormat);
     this.orders = dataFormat
-  },
-  computed: {
-    ...mapGetters(['user'])
   }
-  // methods : {
-  //   ...mapActions({
-  //     addProductToCart: 'addProductToCart'
-  //   })
-  // }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <section class="all-products">
-    <h1>Products</h1>
+    <h1>Tất cả sản phẩm</h1>
     <ProductList category="all"/>
   </section>
 </template>

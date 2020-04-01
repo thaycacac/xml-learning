@@ -516,6 +516,7 @@ input[type='range'].slider:focus::-ms-fill-upper {
 .goto-back {
   cursor: pointer;
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .detail-product {
@@ -579,3 +580,4 @@ input[type='range'].slider:focus::-ms-fill-upper {
 .col-comment {
   width: 200px;
 }
+

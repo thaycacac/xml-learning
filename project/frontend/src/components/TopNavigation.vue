@@ -7,9 +7,9 @@
       <router-link to="/tieu-thuyet">Tiểu thuyết</router-link>
       <div class="wrap-top-right">
         <login v-show="false"/>
-        <router-link to="/me">
+        <router-link to="/orders">
           <button class="button-nav">
-              Profile
+            Lịch sử
           </button>
         </router-link>
         <router-link to="/cart" exact class="cart-link">
