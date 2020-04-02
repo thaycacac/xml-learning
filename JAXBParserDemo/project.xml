@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project id="100100">
+    <name>Xây dựng phần mềm thư viện</name>
+    <customer>ĐH FPT</customer>
+    <startdate>20/02/2020</startdate>
+    <enddate>30/04/2020</enddate>
+    <task>
+        <name>Phân tích</name>
+        <startdate>20/02/2020</startdate>
+        <enddate>28/02/2020</enddate>
+        <time>8</time>
+    </task>
+    <task>
+        <name>Thiết kế</name>
+        <startdate>01/03/2020</startdate>
+        <enddate>30/03/2020</enddate>
+        <time>26</time>
+    </task>
+    <task>
+        <name>Phát triển</name>
+        <startdate>01/04/2020</startdate>
+        <enddate>30/04/2020</enddate>
+        <time>26</time>
+    </task>
+</project>

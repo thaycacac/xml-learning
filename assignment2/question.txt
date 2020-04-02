@@ -1,0 +1,7 @@
+"Requirements:
+1. Design a frame as figure(1 point)
+2. When application run, load all data from given xml file to table with title is all attributes and elements in given xml file. (2 points)
+3. You can choose  any field by your self to do search by function. When user click on search button, the result will be load to table (1.5 points)
+4. When user click Add New, a new dialog or frame will show to input new data and save back to table on main frame and save to xml file (2 points)
+5. When user select a row on table and click  update, a new dialog or frame will show with data selected. User modify data and save back to table on main frame and save to xml file (2 points)
+6. When user select a row on table and click delete, a new confirm dialog will show to confirm. If user choose Yes, data will be removed and save back to table on main frame and save to xml file (1.5 points)

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><projects>
+    <project id="P01001">
+        <name>Dự án xây dựng phần mềm bán hàng</name>
+        <customer>Công ty TMDV ABC</customer>
+        <startdate>23/01/2020</startdate>
+        <enddate>23/05/2020</enddate>
+        <task>
+            <name>Thu thập yêu cầu khách hàng</name>
+            <startdate>25/01/2020</startdate>
+            <enddate>30/01/2020</enddate>
+            <time unit="hour">32</time>
+        </task>
+        <task>
+            <name>Phân tích các chức năng</name>
+            <startdate>01/02/2020</startdate>
+            <enddate>16/02/2020</enddate>
+            <time unit="day">10</time>
+        </task>
+        <task>
+            <name>Thiết kế và phát triển</name>
+            <startdate>08/02/2020</startdate>
+            <enddate>08/04/2020</enddate>
+            <time unit="day">45</time>
+        </task>
+        <task>
+            <name>Kiểm thử và triển khai</name>
+            <startdate>10/04/2020</startdate>
+            <enddate>20/04/2020</enddate>
+            <time unit="day">10</time>
+        </task>
+    </project>
+    <project id="P01016">
+        <name>Xây dựng phần mềm thiết kế xây dựng</name>
+        <customer>Công ty xây dựng sông đà</customer>
+        <startdate>01/01/2020</startdate>
+        <enddate>30/08/2020</enddate>
+        <task>
+            <name>Khảo sát hiện trạng</name>
+            <startdate>02/01/2020</startdate>
+            <enddate>04/01/2020</enddate>
+            <time unit="hour">24</time>
+        </task>
+        <task>
+            <name>Phân tích yêu cầu</name>
+            <startdate>05/01/2020</startdate>
+            <enddate>17/01/2020</enddate>
+            <time unit="day">10</time>
+        </task>
+        <task>
+            <name>Thiết kế chức năng và thiết kế kiến trúc</name>
+            <startdate>20/01/2020</startdate>
+            <enddate>20/04/2020</enddate>
+            <time unit="day">30</time>
+        </task>
+        <task>
+            <name>Phát triển chương trình</name>
+            <startdate>20/04/2020</startdate>
+            <enddate>20/7/2020</enddate>
+            <time unit="day">60</time>
+        </task>
+        <task>
+            <name>Phát triển chương trình</name>
+            <startdate>20/07/2020</startdate>
+            <enddate>20/8/2020</enddate>
+            <time unit="day">20</time>
+        </task>
+    </project>
+    <project id="1002001">
+        <name>Phần mềm quản lý nhân sự</name>
+        <customer>Công ty cổ phần tư vấn thiết kế xây dựng abc</customer>
+        <startdate>20/02/2020</startdate>
+        <enddate>20/05/2020</enddate>
+        <task>
+            <name>xây dựng phần mềm</name>
+            <startdate>20/02/2020</startdate>
+            <enddate>20/04/2020</enddate>
+            <time unit="day">60</time>
+        </task>
+        <task>
+            <name>Triển khai cài đặt và đào tạo</name>
+            <startdate>21/04/2020</startdate>
+            <enddate>20/05/2020</enddate>
+            <time unit="day">20</time>
+        </task>
+    </project>
+    <project id="100201">
+        <name>Xây dựng phần mềm thư viện</name>
+        <customer>ĐH FPT</customer>
+        <startdate>05/03/2020</startdate>
+        <enddate>05/04/2020</enddate>
+        <task>
+            <name>Tạo module A</name>
+            <startdate>06/03/2020</startdate>
+            <enddate>08/03/2020</enddate>
+            <time unit="hour">16</time>
+        </task>
+        <task>
+            <name>Tạo module B</name>
+            <startdate>08/03/2020</startdate>
+            <enddate>10/03/2020</enddate>
+            <time unit="hour">16</time>
+        </task>
+    </project>
+</projects>

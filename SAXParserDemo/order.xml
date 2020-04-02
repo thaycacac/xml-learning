@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<orders>
+    <order code="100101">
+        <order_date>26/02/2020</order_date>
+        <content>Mua sắm</content>
+        <item>
+            <name>Điện thoại iPhone X</name>
+            <quantity>1</quantity>
+            <price>15000000</price>
+        </item>
+        <item>
+            <name>Tai nghe</name>
+            <quantity>1</quantity>
+            <price>500000</price>
+        </item>
+    </order>
+    <order code="100115">
+        <order_date>23/02/2020</order_date>
+        <content>Mua sắm nội thất</content>
+        <item>
+            <name>Tivi Sony 50'</name>
+            <quantity>1</quantity>
+            <price>30000000</price>
+        </item>
+        <item>
+            <name>Loa</name>
+            <quantity>1</quantity>
+            <price>3000000</price>
+        </item>
+    </order>
+</orders>
