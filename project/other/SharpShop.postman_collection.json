@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "af5d7bfd-4650-4606-a779-55a6c7835ba7",
+		"name": "SharpShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7985/api/products?Content-Type=text/xml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7985",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7985/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7985",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders by UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7985/api/order/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7985",
+					"path": [
+						"api",
+						"order",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<UserDTO>\n\t<username>thaycacac</username>\n\t<password>123456</password>\n</UserDTO>"
+				},
+				"url": {
+					"raw": "http://localhost:7985/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7985",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Order>\n\t<customerId>1</customerId>\n\t<orderDate>1998-03-20</orderDate>\n\t<comment>Độc lập tự do hạnh phúc</comment>\n</Order>"
+				},
+				"url": {
+					"raw": "http://localhost:7985/api/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7985",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order Detail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<OrderCreateDTO>\n\t<orderID>15</orderID>\n\t<productID>1</productID>\n\t<quantity>2</quantity>\n</OrderCreateDTO>"
+				},
+				"url": {
+					"raw": "http://localhost:7985/api/order/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7985",
+					"path": [
+						"api",
+						"order",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

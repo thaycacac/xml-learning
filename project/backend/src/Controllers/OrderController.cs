@@ -58,7 +58,7 @@ namespace SharpShop.Controllers
             {
                 await connection.OpenAsync();
                 var query = @"INSERT INTO [Order] (customerId, status, orderDate, comment)
-                    VALUES (@customerId, 'shipping', @orderDate, @comment); SELECT SCOPE_IDENTITY()";
+                    VALUES (@customerId, 'shiping', @orderDate, @comment); SELECT SCOPE_IDENTITY()";
                     idOrder = await connection.QuerySingleAsync<int>(query, new { model.customerId, model.orderDate, model.comment });
             }
             return Ok(idOrder);
