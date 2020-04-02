@@ -604,4 +604,5 @@ input[type='range'].slider:focus::-ms-fill-upper {
   color: white;
   font-size: 14px;
   font-weight: normal;
+  cursor: pointer;
 }

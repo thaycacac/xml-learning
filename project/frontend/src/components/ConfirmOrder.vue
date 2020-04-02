@@ -1,8 +1,9 @@
 <template>
-  <button class="button-nav" id="show-modal" @click="showModal = !showModal">Thanh toán
+  <span>
+    <button class="button-nav" id="show-modal" @click="showModal=true">Thanh toán</button>
     <modal v-if="showModal">
       <h3 slot="header">Xác nhận thông tin
-        <span class="close" @click="showModal = true">X</span>
+        <span class="close" @click="showModal = !showModal">X</span>
       </h3>
       <div slot="body">
         <input v-model="userInfo.fullname" type="text" class="input" placeholder="fullname" disabled>
@@ -15,7 +16,7 @@
         Hoàn tất thanh toán
       </button>
     </modal>
-  </button>
+  </span>
 </template>
 
 <script>
