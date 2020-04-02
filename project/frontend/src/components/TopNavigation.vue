@@ -6,7 +6,6 @@
       <router-link to="/ngon-tinh">Ngôn tình</router-link>
       <router-link to="/tieu-thuyet">Tiểu thuyết</router-link>
       <div class="wrap-top-right">
-        <login v-show="false"/>
         <router-link to="/orders">
           <button class="button-nav">
             Lịch sử
@@ -28,13 +27,11 @@
 <script>
 import index from '@/store/index'
 import logo from '@/assets/logo'
-import Login from '@/components/login'
 
 export default {
   name:'TopNavigation',
   components: {
-    logo,
-    Login
+    logo
   },
   computed: {
     noItems() {

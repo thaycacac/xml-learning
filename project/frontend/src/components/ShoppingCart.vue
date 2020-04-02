@@ -3,7 +3,7 @@
     <div v-if="$store.state.cart.length <= 0" class="empty-cart">
       <p>Your cart is currently empty.</p>
       <router-link to="/">
-        <button>Shop Now!</button>
+        <button>Mua sản phẩm!</button>
       </router-link>
     </div>
     <div v-else class="shopping-cart-items">

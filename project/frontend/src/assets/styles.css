@@ -60,6 +60,7 @@ textarea {
   border-radius: 20px;
   padding: 12px 15px;
   font-size: 15px;
+  margin-bottom: 10px;
 }
 
 textarea:focus {
@@ -595,3 +596,12 @@ input[type='range'].slider:focus::-ms-fill-upper {
   width: 200px;
 }
 
+.close {
+  float: right;
+  background-color: #B83280;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+}
